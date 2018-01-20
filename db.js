@@ -5,8 +5,10 @@ function buildStmt(search_str) {
   let metaphone_similarity = 20;
   let response_limit = 20;
   return `
-  SELECT * FROM foods
-  WHERE metaphone ~ metaphone('${search_str}', ${metaphone_similarity})
+  SELECT * FROM foods WHERE
+  name ~ '${search_str}' OR
+  metaphone ~ metaphone('${search_str}', ${metaphone_similarity})
+  ORDER BY levenshtein(metaphone, metaphone('${search_str}', ${metaphone_similarity}))
   LIMIT ${response_limit}
   ;
   `
