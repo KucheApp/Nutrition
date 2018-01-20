@@ -1,0 +1,25 @@
+{
+  "name": "kuchenutrition",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KucheApp/Nutrition.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/KucheApp/Nutrition/issues"
+  },
+  "homepage": "https://github.com/KucheApp/Nutrition#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "leven": "^2.1.0",
+    "pg": "^7.4.1"
+  }
+}

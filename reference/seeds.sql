@@ -35,13 +35,18 @@ CREATE TABLE IF NOT EXISTS food_consolidated (
   carbs_mg INTEGER NOT NULL,
   fiber_mg INTEGER NOT NULL,
   sugars_mg INTEGER NOT NULL,
-  protein_mg INTEGER NOT NULL
+  protein_mg INTEGER NOT NULL,
+  metaphone VARCHAR(20) NOT NULL
 );
 
-5: 1, # calories
-2: 2, # fat
-26: 3,# sodium
-3: 4, # carbs
-20: 5,# fiber
-18: 6,# sugars
-1: 7, # protein
+CREATE INDEX on food_consolidated (metaphone);
+
+CREATE EXTENSION fuzzystrmatch;
+
+-- 5: 1, # calories
+-- 2: 2, # fat
+-- 26: 3,# sodium
+-- 3: 4, # carbs
+-- 20: 5,# fiber
+-- 18: 6,# sugars
+-- 1: 7, # protein

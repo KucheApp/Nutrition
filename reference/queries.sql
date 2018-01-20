@@ -13,7 +13,7 @@ ORDER BY t2.nutrient;
 
 SELECT t2.name, t1.name AS food_group FROM
 (
-  SELECT t12.name, t11.description FROM 
+  SELECT t12.name, t11.description FROM
   (SELECT food_group, description FROM foods) AS t11
   JOIN
   (SELECT fg_id, name FROM food_groups) AS t12
@@ -25,3 +25,5 @@ JOIN
 ) AS t2
 ON t1.description = t2.name
 ORDER BY fc_id;
+
+SELECT * FROM food_consolidated WHERE metaphone ~ metaphone('query', 20);
